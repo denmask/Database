@@ -1,0 +1,8 @@
+# Ignora i moduli di sistema
+node_modules/
+frontend/node_modules/
+progetto-database/backend/node_modules/
+
+# Ignora le variabili d'ambiente (sicurezza!)
+.env
+progetto-database/backend/.env

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg: #f5f6fa;
+  --white: #ffffff;
+  --border: #e2e5ed;
+  --accent: #3b6ef6;
+  --accent-light: #eef2ff;
+  --danger: #e53e3e;
+  --danger-light: #fff5f5;
+  --text: #1a1f36;
+  --text-secondary: #6b7280;
+  --shadow: 0 1px 4px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.App {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+/* HEADER */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+h1 span { color: var(--accent); }
+
+.count-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin-left: 8px;
+}
+
+.header-meta {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+/* SECTION LABEL */
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+/* FORM CARD */
+.modulo-inserimento {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 28px;
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.modulo-inserimento input[type="text"] {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 9px 13px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.modulo-inserimento input[type="text"]::placeholder {
+  color: #b0b7c3;
+}
+
+.modulo-inserimento input[type="text"]:focus {
+  border-color: var(--accent);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(59, 110, 246, 0.1);
+}
+
+.modulo-inserimento button[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 9px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.modulo-inserimento button[type="submit"]:hover {
+  background: #2d5ce8;
+  transform: translateY(-1px);
+}
+
+hr { display: none; }
+
+/* TABLE */
+.tabella-wrapper {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tabella-elegante {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabella-elegante thead {
+  background: #f9fafc;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabella-elegante th {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-secondary);
+  padding: 12px 18px;
+  text-align: left;
+  border: none;
+}
+
+.tabella-elegante td {
+  padding: 13px 18px;
+  font-size: 0.9rem;
+  color: var(--text);
+  border: none;
+  border-top: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.tabella-elegante tbody tr:hover {
+  background: #fafbff;
+}
+
+.tabella-elegante tbody tr:first-child td {
+  border-top: none;
+}
+
+/* Nome cell */
+.tabella-elegante td:first-child {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.tabella-elegante td:first-child::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+/* Città badge */
+.badge-citta {
+  display: inline-block;
+  background: #f1f3f9;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Delete button */
+.btn-elimina {
+  background: transparent !important;
+  color: var(--danger) !important;
+  border: 1px solid #fca5a5 !important;
+  padding: 5px 14px !important;
+  border-radius: 6px !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.15s, border-color 0.15s !important;
+}
+
+.btn-elimina:hover {
+  background: var(--danger-light) !important;
+  border-color: var(--danger) !important;
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 48px;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .form-row { grid-template-columns: 1fr; }
+  h1 { font-size: 1.1rem; }
+}
