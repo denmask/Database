@@ -43,17 +43,16 @@ function App() {
 
   return (
     <div className="App">
-
-      {/* HEADER */}
       <div className="app-header">
         <h1>
           Gestionale <span>Database</span> Persone
           <span className="count-badge">{listaPersone.length}</span>
         </h1>
-        <span className="header-meta">MySQL · Express · React</span>
+        <span className="header-meta">
+          MySQL · Express · React
+        </span>
       </div>
 
-      {/* FORM */}
       <div className="section-label">Inserisci nuovo record</div>
       <form onSubmit={inviaDati} className="modulo-inserimento">
         <div className="form-row">
@@ -82,7 +81,6 @@ function App() {
         </div>
       </form>
 
-      {/* TABLE */}
       <div className="section-label" style={{ marginBottom: 14 }}>Archivio persone</div>
       <div className="tabella-wrapper">
         <table className="tabella-elegante">
@@ -107,7 +105,7 @@ function App() {
               listaPersone.map((persona) => (
                 <tr key={persona.id}>
                   <td>{persona.nome}</td>
-                  <td style={{ color: 'var(--text-secondary)' }}>{persona.cognome}</td>
+                  <td>{persona.cognome}</td>
                   <td>
                     <span className="badge-citta">{persona.citta}</span>
                   </td>
@@ -125,7 +123,6 @@ function App() {
           </tbody>
         </table>
       </div>
-
     </div>
   );
 }
